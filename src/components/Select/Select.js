@@ -14,11 +14,12 @@ const Select = ({ label, value, onChange, children }) => {
 
   return ( 
       <Wrapper>
-        <p>{displayedValue}</p>
+        <div>{displayedValue}</div>
+        <Chevron id="chevron-down" size={24} color={colorDisplay} />
         <select value={value} onChange={onChange}>
           {children}
         </select>
-        <Chevron id="chevron-down" size={20} color={colorDisplay} />
+        
       </Wrapper>
   );
 };
@@ -30,8 +31,8 @@ const Chevron = styled(Icon)`
 `;
 
 const Wrapper = styled.div`
-    width: fit-content;
-    height: fit-content;
+    width: max-content;
+    height: max-content;
     position: relative;
     background-color: ${COLORS.transparentGray15};
     color: ${colorDisplay};
@@ -42,21 +43,22 @@ const Wrapper = styled.div`
     border: none;
     padding: 12px 16px; 
 
-    & p{
+    & div{
       position: relative;
-      top: -5px;
       user-select: none;
       display: inline-block;
       padding-right: 12px;
     }
 
     select {
+      width: 100%;
+      height: 100%;
       border: none;
       opacity: 0;
       background-color: ${COLORS.transparentGray15};
       position: absolute;
-      top: 12px;
-      left: 10px;
+      top: 0px;
+      left: 0px;
       font-size: 1.2rem;
     }
 
