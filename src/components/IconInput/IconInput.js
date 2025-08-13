@@ -41,7 +41,6 @@ const PlaceIcon = styled(Icon)`
   top: 0;
   left: 0;
   color: ${COLORS.gray500};
-  pointer-events: none;
 `;
 
 const StyledInput = styled.input`
@@ -53,6 +52,7 @@ const StyledInput = styled.input`
   font-weight: 700;
   text-indent: calc(var(--indent)*1px);
   color: ${COLORS.gray700};
+  outline-offset: 2px;
   &::placeholder {
     font-weight: 400;
     color: ${COLORS.gray500};
@@ -60,9 +60,9 @@ const StyledInput = styled.input`
 
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
+  display:block;
   position: relative;
-  width: max-content;
   align-items: center;
   &:hover{
     ${StyledInput}, ${PlaceIcon} {
